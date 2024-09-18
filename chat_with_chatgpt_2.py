@@ -21,8 +21,8 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 # Constants (ensure these are correctly set in your .env file)
 MAIL = os.getenv('MAIL')
 PASSWORD = os.getenv('PASSWORD')
-CHROME_BINARY_LOCATION = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
-CHROMEDRIVER_PATH = "C:\\Users\\benam\\source\\chromedriver-win64\\chromedriver.exe"
+CHROME_BINARY_LOCATION = os.getenv('CHROME_BINARY_LOCATION')
+CHROME_DRIVER_PATH = os.getenv('CHROME_DRIVER_PATH')
 CHATGPT_URL = 'https://chat.openai.com/'  # Corrected URL
 COOKIES_PATH = "cookies.pkl"
 
@@ -72,7 +72,7 @@ def setup_driver():
     
     logging.info("Starting Chrome browser")
     try:
-        driver = uc.Chrome(options=chrome_options, driver_executable_path=CHROMEDRIVER_PATH)
+        driver = uc.Chrome(options=chrome_options, driver_executable_path=CHROME_DRIVER_PATH)
     except Exception as e:
         logging.error(f"Error initializing Chrome driver: {e}")
         return None
