@@ -68,7 +68,7 @@ def setup_driver():
     # chrome_options.add_argument(r"user-data-dir=C:\\Users\\benam\\AppData\\Local\\Google\\Chrome\\User Data")
     # chrome_options.add_experimental_option("detach", True)
     # chrome_options.add_experimental_option("excludeSwitches", ["enable-logging"])
-    chrome_options.binary_location = CHROME_BINARY_LOCATION
+    # chrome_options.binary_location = CHROME_BINARY_LOCATION
     
     logging.info("Starting Chrome browser")
     try:
